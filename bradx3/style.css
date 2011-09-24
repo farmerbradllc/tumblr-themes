@@ -257,6 +257,13 @@ padding-right:25em;
 	position: relative;
 	top: -22px;
 }
+
+.is320 #nav li {
+	margin: 10px auto 0;
+	text-align: center;
+	width: 250px;
+}
+
 #nav li {
 	float: left;
 	margin: 0 0 0 10px;
