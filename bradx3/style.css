@@ -259,7 +259,7 @@ padding-right:25em;
 }
 
 .is320 #nav {
-	margin-left: 0;
+	padding-left: 0;
 }
 
 .is320 #nav li {
