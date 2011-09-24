@@ -214,11 +214,11 @@ pre {
 	margin: 0 auto;
 	width: 960px;
 	position: relative;
-	-webkit-transition: width 1.0s ease-out;  
-     -moz-transition: width 1.0s ease-out;  
-      -ms-transition: width 1.0s ease-out;  
-       -o-transition: width 1.0s ease-out;  
-          transition: width 1.0s ease-out;
+	-webkit-transition: width 0.5s ease-out;  
+     -moz-transition: width 0.5s ease-out;  
+      -ms-transition: width 0.5s ease-out;  
+       -o-transition: width 0.5s ease-out;  
+          transition: width 0.5s ease-out;
 }
 
 .is320 #container {
