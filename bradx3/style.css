@@ -259,6 +259,7 @@ padding-right:25em;
 }
 
 .is320 #nav li {
+	float: none;
 	margin: 10px auto 0;
 	text-align: center;
 	width: 250px;
