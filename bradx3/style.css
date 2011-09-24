@@ -258,6 +258,10 @@ padding-right:25em;
 	top: -22px;
 }
 
+.is320 #nav {
+	margin-left: 0;
+}
+
 .is320 #nav li {
 	float: none;
 	margin: 10px auto 0;
