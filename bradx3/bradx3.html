@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>{block:SearchPage}{lang:Search results for SearchQuery} - {/block:SearchPage}{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
+	<link rel="icon" href="{Favicon}"/>
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}"/>
+	{block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=775"/>
+	<meta name="text:Disqus Shortname" content="" />
+	<link rel="stylesheet" href="http://static.tumblr.com/xcxngn2/Gr0lm7i86/style.css" type="text/css" media="screen" />
+	<style type="text/css" media="screen">
+		{CustomCSS}
+	</style>
+</head>
+<body>
+<div class="noise">
+	<div id="container">
+		<div id="header">
+			<h1><a href="/">{Title}</a></h1>
+			<ul id="nav">
+			{block:HasPages}
+					{block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}
+			{/block:HasPages}
+			{block:AskEnabled}<li><a href="/ask">{AskLabel}</a></li>{/block:AskEnabled}
+            {block:SubmissionsEnabled}<li><a href="/submit">{SubmitLabel}</a></li>{/block:SubmissionsEnabled}
+			</ul>
+		</div>
+		<a name="contents"></a>
+		<div id="contents">
+			{block:Posts}
+			<div class="post">
+				<div class="sidebar">
+					<ul>
+						{block:Date}
+							{block:NewDayDate}
+								<li class="date">
+									<h2>{DayOfMonth}{DayOfMonthSuffix} {Month} {Year}</h2>
+								</li>
+							{/block:NewDayDate}
+						{/block:Date}
+						{block:ContentSource}
+							<li>
+								{lang:Source}: <a href="{SourceURL}">{block:SourceLogo}<img src="{BlackLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />{/block:SourceLogo}{block:NoSourceLogo}{SourceTitle}{/block:NoSourceLogo}</a>
+							</li>
+	    		    	{/block:ContentSource}
+						<img class="author-portrait" src="{PostAuthorPortraitURL-128}"/>
+						{block:NoteCount}
+							<li class="notes">
+								<a href="{Permalink}/#notes">{NoteCountWithLabel}</a>&nbsp;
+							</li>
+						{/block:NoteCount}
+						{block:Source}
+						 	<li>
+								{Source}
+							</li>
+						{/block:Source}
+						<li class="permalink"><a href="{Permalink}">Permalink</a></li>
+						{block:IfDisqusShortname}
+							<li class="comments">
+								<a href="{Permalink}#disqus_thread" style="border-width: 0px"></a>
+							</li>
+						{block:IfDisqusShortname}
+ 						<li class="tweet"><a href="http://twitter.com/home?status={block:PostSummary}{PostSummary} - {/block:PostSummary}{ShortURL}" target="_blank">{lang:Tweet this}</a></li>
+					</ul>
+                                
+                                <p class="tags">
+                                {block:Tags}
+                                        <a href="{TagURL}">{Tag} </a>
+                                {/block:Tags}
+                                </p>	
+
+				{block:Regular}
+					</div>
+					<div class="content text">
+                                            <div class="text-post">
+                                               <a href="{Permalink}">A TEXT POST</a>
+                                            </div>
+						{block:Title}<h3><a href="{Permalink}">{Title}</a></h3>{/block:Title}
+						<div class="go">
+							{Body}
+						</div>
+                                                
+                                                
+
+				{/block:Regular}
+				
+				{block:Photo}
+						
+					</div>
+					<div class="content image">
+                                           <div class="image-post">
+                                              <a href="{Permalink}">A PHOTO</a>
+                                           </div>
+						{LinkOpenTag}
+<a href="{PhotoURL-500}" rel="prettyPhoto">
+<span style="background: url({PhotoURL-400}) no-repeat center center;" class="image-wrap">
+<img class="image" src="{PhotoURL-400}" />
+</span>
+</a>
+{LinkCloseTag}
+						{block:Caption}
+							<div class="description">{Caption}</div>
+						{/block:Caption}
+				{/block:Photo}
+
+				{block:Quote}
+					</div>
+					<div class="content quote">
+
+                                                <div class="quote-post">
+                                                  <a href="{Permalink}">A QUOTE</a>
+                                                </div>
+
+						<h4>{Quote}</h4>
+
+						
+				{/block:Quote}
+
+				{block:Link}
+					</div>
+					<div class="content link">
+                                                <div class="link-post">
+                                                  <a href="{Permalink}">A LINK</a>
+                                                </div>   
+						<h3><a href="{URL}" class="link" {Target}>{Name}</a></h3>
+						{block:Description}
+							<div class="description"><p>{Description}</p></div>
+						{/block:Description}
+				{/block:Link}
+
+				{block:Conversation}
+						
+					</div>
+					<div class="content chat">
+                                                <div class="chat-post">
+                                                  <a href="{Permalink}">A CHAT</a>
+                                                </div> 
+						{block:Title}<h3><a href="{Permalink}">{Title}</a></h3>{/block:Title}
+						<ul>
+							{block:Lines}
+								<li class="{Alt}">
+									{block:Label}<span class="label">{Label}</span>{/block:Label}
+									{Line}
+								</li>
+							{/block:Lines}
+						</ul>
+				{/block:Conversation}
+
+				{block:Audio}
+
+					</div>
+					<div class="content audio">
+                                           <div class="audio-post">
+                                             <a href="{Permalink}">A TUNE</a>
+                                           </div> 
+                                              
+{block:AlbumArt}
+<span style="background: url({AlbumArtURL}) no-repeat center center;" class="image-wrap"><img src="{AlbumArtURL}" class="cover" />
+</span>
+{/block:AlbumArt}
+						{AudioPlayerGrey}
+						{block:Caption}
+							<div class="description"><p>{Caption}</p></div>
+						{/block:Caption}
+				{/block:Audio}
+
+				{block:Video}
+					</div>
+					<div class="content video">
+                                                <div class="video-post">
+                                                  <a href="{Permalink}">A VIDEO</a>
+                                                </div>
+						{Video-400}
+						{block:Caption}
+							<div class="description">{Caption}</div>
+						{/block:Caption}
+				{/block:Video}
+				
+				{block:RebloggedFrom}
+					<div class="description">{lang:Reblogged from ReblogParentTitle 2}</div>
+				{/block:RebloggedFrom}
+
+				{block:HasTags}
+					
+				{/block:HasTags}
+                
+				</div>
+			</div>
+			{/block:Posts}
+
+
+			{block:PostNotes}
+
+                <div class="content notes">
+                    
+                    {block:Permalink}
+                    {block:IfDisqusShortname}
+                    <div id="disqus_thread"></div>
+                    <script type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/embed.js"></script>
+                    <noscript><a href="http://{text:Disqus Shortname}.disqus.com/?url=ref">{lang:View the discussion thread}</a></noscript>
+                    {/block:IfDisqusShortname}
+                    {/block:Permalink}
+                
+                </div>
+
+
+				<div class="content notes">
+
+					{PostNotes}
+                                </div>
+
+
+			{/block:PostNotes}
+
+			{block:IndexPage}
+			<div class="post" style="margin-bottom: 40px;">
+                                <div class="sidebar">
+
+                                </div>
+				<div class="footer-nav clearfix" style="text-transform:lowercase;">
+					{block:PreviousPage}
+						<a class="previous-page" href="{PreviousPage}">{lang:Previous}</a>
+					{/block:PreviousPage}    
+   
+					{block:NextPage}
+						<a class="next-page" href="{NextPage}">{lang:Next} &#187;</a>
+					{/block:NextPage}
+				</div>
+			</div>
+			{/block:IndexPage}
+
+		</div>
+		<a name="description"></a>
+		<div id="footer" class="clearfix">
+
+			{block:GroupMembers}
+			<div class="follow">
+				<h2>{lang:Group members}</h2>
+				<ul>
+					{block:GroupMember}
+						<li><a href="{GroupMemberURL}" title="{GroupMemberName}"><img src="{GroupMemberPortraitURL-24}" alt="{GroupMemberName}" /></a></li>
+					{/block:GroupMember}
+				</ul>
+			</div>
+			{/block:GroupMembers}
+
+		</div>
+       </div>
+</div>
+
+<div class="footer-wrap">
+	<p class="footer">Atonement by <a href="http://www.madebylipsum.com">Toni Romero</a> {lang:Powered by Tumblr 2} / <a href="/archive">Archives</a> / <a href="{RSS}">Feed</a></p>
+</div>
+
+	{block:IfDisqusShortname}
+    <script type="text/javascript">
+    //<![CDATA[
+    (function() {
+        var links = document.getElementsByTagName('a');
+        var query = '?';
+        for(var i = 0; i < links.length; i++) {
+        if(links[i].href.indexOf('#disqus_thread') >= 0) {
+            query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+        }
+        }
+        document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/get_num_replies.js' + query + '"></' + 'script>');
+    })();
+    //]]>
+    </script>
+    {/block:IfDisqusShortname}
+</body>
+</html>
